@@ -1,0 +1,64 @@
+﻿@model PropertyUpdateModel
+@{
+	ViewData["Title"] = "Update Property";
+}
+
+<div class="text-center">
+	<h1 class="display-4">@ViewData["Title"]</h1>
+	<h1 class="display-6">@Model.Id</h1>
+</div>
+
+<br />
+
+<div class="row">
+	<div class="col-4 mx-auto">
+		<form method="post" enctype="multipart/form-data">
+			<div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+			<div class="form-group d-grid">
+				<br />
+				<label>Header</label>
+				<input asp-for=Header class="form-control" placeholder="Header"></input>
+				<span asp-validation-for="Header" class="text-danger" small></span>
+				<br />
+				<label>Price</label>
+				<input asp-for=Price class="form-control" placeholder="Price"></input>
+				<span asp-validation-for="Price" class="text-danger" small></span>
+				<br />
+				<label>Address</label>
+				<input asp-for=Address class="form-control" placeholder="Address"></input>
+				<span asp-validation-for="Address" class="text-danger" small></span>
+				<br />
+				<label>Property Type</label>
+				<input asp-for=PropertyType class="form-control" placeholder="Property Type"></input>
+				<span asp-validation-for="PropertyType" class="text-danger" small></span>
+				<br />
+				<label>Salary Type</label>
+				<input asp-for=SalaryType class="form-control" placeholder="Salary Type"></input>
+				<span asp-validation-for="SalaryType" class="text-danger" small></span>
+				<br />
+				<label>Rooms</label>
+				<input asp-for=Room class="form-control" placeholder="Rooms"></input>
+				<span asp-validation-for="Room" class="text-danger" small></span>
+				<br />
+				<label>Net Size</label>
+				<input asp-for=NetSize class="form-control" placeholder="Net Size"></input>
+				<span asp-validation-for="NetSize" class="text-danger" small></span>
+				<br />
+				<label>Gross Size</label>
+				<input asp-for=GrossSize class="form-control" placeholder="Gross Size"></input>
+				<span asp-validation-for="GrossSize" class="text-danger" small></span>
+				<br />
+
+				<div id="imageUploads">
+					<div class="form-group">
+						<label for="imageFiles">Add Images:</label>
+						<input asp-for=Files type="file" name="Files" multiple="multiple" class="form-control image-upload">
+					</div>
+				</div>
+				<br />
+
+				<button type="submit" class="btn btn-primary">Update</button>
+			</div>
+		</form>
+	</div>
+</div>

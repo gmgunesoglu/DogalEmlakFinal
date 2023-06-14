@@ -1,0 +1,46 @@
+﻿@model List<PropertyListModel>
+@{
+    ViewData["Title"] = "Find Yours";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+
+<br />
+
+<table>
+    <tr>
+        <th>Header</th>
+        <th>Salary Type</th>
+        <th>Property Type</th>
+        <th>Price</th>
+        <th>Renewal Date</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Header</td>
+            <td>@item.SalaryType</td>
+            <td>@item.PropertyType</td>
+            <td>@item.Price</td>
+            <td>@item.DateOfRenewal.ToLongDateString()</td>
+
+            <td>
+                <div class="col-3">
+                    <form method="post" asp-action="Details" asp-route-id="@item.Id">
+                        <button type="submit" class="btn green-btn" style="width: 100px; height: 40px;">Details</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+
+
+
+

@@ -1,0 +1,110 @@
+﻿@model PropertyModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+
+<div class="text-center 100size">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+
+<br />
+<br />
+
+<div style="display: flex;">
+    <div class="col-6">
+        <div id="propertyImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                @for (var i = 0; i < Model.Images.Count; i++)
+                {
+                    <li data-bs-target="#propertyImagesCarousel" data-bs-slide-to="@i" class="@((i == 0) ? "active" : "")"></li>
+                }
+            </ol>
+
+            <div class="carousel-inner">
+                @for (var i = 0; i < Model.Images.Count; i++)
+                {
+                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                        <div class="image-container">
+                            <img src="data:image;base64,@Convert.ToBase64String(Model.Images[i])" class="d-block w-100" alt="Property Image">
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#propertyImagesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#propertyImagesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <table>
+            <tr>
+                <th>Property No: </th>
+                <th>@Model.Id</th>
+            </tr>
+            <tr>
+                <th>Header: </th>
+                <th>@Model.Header</th>
+            </tr>
+            <tr>
+                <th>Property Type: </th>
+                <th>@Model.PropertyType</th>
+            </tr>
+            <tr>
+                <th>Salary Type: </th>
+                <th>@Model.SalaryType</th>
+            </tr>
+            <tr>
+                <th>Price: </th>
+                <th>@Model.Price</th>
+            </tr>
+            <tr>
+                <th>Renewal Date: </th>
+                <th>@Model.DateOfRenewal</th>
+            </tr>
+            <tr>
+                <th>Added Date: </th>
+                <th>@Model.DateOfAdded</th>
+            </tr>
+            <tr>
+                <th>Net Size: </th>
+                <th>@Model.NetSize</th>
+            </tr>
+            <tr>
+                <th>Gross Size: </th>
+                <th>@Model.GrossSize</th>
+            </tr>
+            <tr>
+                <th>Room: </th>
+                <th>@Model.Room</th>
+            </tr>
+            <tr>
+                <th>Phone: </th>
+                <th>@Model.Phone</th>
+            </tr>
+            <tr>
+                <th>Adres: </th>
+                <th>@Model.Address</th>
+            </tr>
+        </table>
+    </div>
+    <br />
+</div>
+
+
+
+@section Scripts {
+    <script src="https://unpkg.com/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+            integrity="sha384-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            crossorigin="anonymous"></script>
+}
+

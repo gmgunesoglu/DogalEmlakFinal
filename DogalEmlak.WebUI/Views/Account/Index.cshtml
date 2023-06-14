@@ -1,0 +1,57 @@
+﻿@model UserDetailModel
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+
+<br />
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>@Model.Id</th>
+    </tr>
+    <tr>
+        <th>First Name</th>
+        <th>@Model.FirstName</th>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <th>@Model.LastName</th>
+    </tr>
+    <tr>
+        <th>User Name</th>
+        <th>@Model.UserName</th>
+    </tr>
+    <tr>
+        <th>Password</th>
+        <th>@Model.Password</th>
+    </tr>
+    <tr>
+        <th>Role</th>
+        <th>@Model.Role</th>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <th>@Model.Email</th>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <th>@Model.Phone</th>
+    </tr>
+    <tr>
+        <th>Is Locked</th>
+        <th>@Model.Locked</th>
+    </tr>
+    <tr>
+        <th>Date Of Added</th>
+        <th>@Model.DateOfAdded</th>
+    </tr>
+    <tr>
+        <th>Property Count</th>
+        <th>@Model.PropertyCount</th>
+    </tr>
+</table>
