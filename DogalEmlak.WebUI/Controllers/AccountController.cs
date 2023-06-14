@@ -90,8 +90,12 @@ namespace DogalEmlak.WebUI.Controllers
 				{
 					return RedirectToAction("Index", "Admin");
 				}
+                if (user.Role.Authority.Equals("Staff"))
+                {
+                    return RedirectToAction("Index", "Staff");
+                }
 
-				return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {

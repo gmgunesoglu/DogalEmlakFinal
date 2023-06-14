@@ -11,46 +11,32 @@
 <br />
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 mx-auto">
         <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label">First Name</label>
-                <input asp-for="FirstName" class="form-control" />
+            <div class="form-group d-grid">
+                <input asp-for="FirstName" class="form-control" placeholder="First Name: " />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label">Last Name</label>
-                <input asp-for="LastName" class="form-control" />
+                <br />
+                <input asp-for="LastName" class="form-control" placeholder="Last Name: " />
                 <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label">User Name</label>
-                <input asp-for="UserName" class="form-control" />
+                <br />
+                <input asp-for="UserName" class="form-control" placeholder="User Name: " />
                 <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label">Password</label>
-                <input asp-for="Password" type="password" class="form-control" />
+                <br />
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password: " />
                 <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RePassword" class="control-label">Re-Password</label>
-                <input asp-for="RePassword" type="password" class="form-control" />
+                <br />
+                <input asp-for="RePassword" type="password" class="form-control" placeholder="Password: " />
                 <span asp-validation-for="RePassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label">Email</label>
-                <input asp-for="Email" class="form-control" />
+                <br />
+                <input asp-for="Email" class="form-control" placeholder="Email: " />
                 <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label">Phone</label>
-                <input asp-for="Phone" class="form-control" />
+                <br />
+                <input asp-for="Phone" class="form-control" placeholder="Phone: " />
                 <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-primary" />
+                <br/>
+                <input type="submit" value="Register" class="btn green-btn" />
             </div>
         </form>
     </div>
@@ -58,6 +44,3 @@
 
 <br />
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>

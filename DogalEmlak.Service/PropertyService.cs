@@ -45,14 +45,10 @@ namespace DogalEmlak.Service
 				
 			};
 			model.Id = property.Id;		
-			await repository.AddAsync(property);
+			repository.Add(property);
+			context.SaveChanges();
 			PropertyImageService service = new PropertyImageService();
-			service.AddAllAsync(model.Files,model.Id);
-			int result = await context.SaveChangesAsync();
-			if (result == 0)
-			{
-				throw new PropertyCouldnotAdded();
-			}
+			await service.AddAllAsync(model.Files,model.Id);
 		}
 
 		public async Task<List<PropertyListModel>> PropertyListModelsAsync(string strId)
